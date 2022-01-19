@@ -1,0 +1,15 @@
+{
+    "agentId": "",
+    "version": "0.0.1",
+    "jsonRpcUrl": "https://mainnet.infura.io/v3/543ea3e299c54d208e9833b370bcc281",
+    "imageRepositoryUrl": "",
+    "imageRepositoryUsername": "",
+    "imageRepositoryPassword": "",
+    "agentRegistryContractAddress": "",
+    "agentRegistryJsonRpcUrl": "",
+    "ipfsGatewayUrl": "",
+    "ipfsGatewayAuth": "",
+    "documentation": "README.md",
+    "debug": true,
+    "traceRpcUrl": ""
+}
