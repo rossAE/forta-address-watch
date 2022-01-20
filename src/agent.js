@@ -11,22 +11,19 @@ const addresses = Object.keys(addressList);
 
 async function handleTransaction(txEvent) {
   const findings = [];
-  const { from, hash } = txEvent.transaction;
+  const txAddresses = Object.keys(txEvent.addresses);
 
   // check if an address in the watchlist was the initiator of the transaction
   addresses.forEach((address) => {
-    if (from === address.toLowerCase()) {
+    console.log(address, txAddresses);
+    if (txAddresses.includes(address.toLowerCase())) {
       findings.push(
         Finding.fromObject({
-          name: 'Aave Address Watch',
+          name: 'ENS Address Watch',
           description: `Address ${address} (${addressList[address]}) was involved in a transaction`,
-          alertId: 'AE-AAVE-ADDRESS-WATCH',
+          alertId: 'ENS-ADDRESS-WATCH',
           type: FindingType.Suspicious,
           severity: FindingSeverity.Low,
-          metadata: {
-            from,
-            hash,
-          },
           everestId: AAVE_EVEREST_ID,
         }),
       );

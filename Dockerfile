@@ -13,8 +13,6 @@ WORKDIR /app
 # COPY --from=builder /app/dist ./
 COPY ./src ./src
 COPY agent-config.json ./
-COPY contract-addresses.json ./
-COPY ./abi ./abi
 COPY package*.json ./
 RUN npm ci --production
 CMD [ "npm", "run", "start:prod" ]
